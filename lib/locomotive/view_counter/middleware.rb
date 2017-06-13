@@ -23,7 +23,7 @@ module Locomotive
         type = entry.content_type
 
         if type.fields_by_name[:views]
-	  Rails.logger.fatal("calling ViewCounter have views, entity: #{entry}")
+	  Rails.logger.fatal("calling ViewCounter have views, entity: #{entry}, #{entry[:views]}, #{entry[:_slug]}, #{entry[:title]}")
           repository = services.repositories.content_entry.with(type)
 	  #begin
           x = repository.inc(entry, :views)
